@@ -1,86 +1,64 @@
 from theheap import Heap
 
-n = 4
-onoff = [False for _ in range(n)]
-ranges = [[] for _ in range(n)]
 
-def build_graph():
+def build_graph(n):
     # complexity: O(N^2)
+    ranges = [[] for _ in range(n)]
     total = 0
     rand = int(random.random() * n)
     numb = n
+
     while total < n:
+        visited = [-1 for _ in range(n)]
         counter = numb - 1
         pos = rand % n
         if len(ranges[pos]) == 0:
-            tot = rand
             while counter > 0:
-                ranges[pos].append((tot + 1) % n)
-                tot += 1
-                counter -= 1
+                calc = int((rand + random.random() * n)% n)
+                if visited[calc] == -1:
+                    ranges[pos].append(calc)
+                    counter -= 1
+                    visited[calc] = 1 # means it has been visited
             rand += 1
             numb -= 1
         total += 1
-    print(ranges)
-    return 0
-
-import math
-
-def edges_modifier():
-    dist = [ 0 for _ in range(n)]
-    pred = [ math.inf for _ in range(n)]
-
-    for i in range(n-1):
-        for each edges:
+    return ranges
 
 
-
-
-
-    print(pred)
-    return 0
-
-
-def selection(i):
+def selection(i,onoff,ranges):
 
     onoff[i] = not onoff[i]  #change itself
 
     #change connected graph
+
     for j in ranges[i]:
-        onoff[j] = not onoff[j]
-        for k in ranges[j]:
-            onoff[k] = not onoff[k]
-            #for
+        loop = (len(ranges[i])+1) - len(ranges[j])
+        for _ in range(loop+1):
+            onoff[j] = not onoff[j]
 
-    # it will create O(N^N) worst case time complexity,
-    # solution: use bellman ford's algorithm
-
-    print(onoff)
-
-    count_a = 0
-    count_b = 0
-    for z in range(n):
-        if onoff[z] == True:
-            count_a += 1
-        else:
-            count_b += 1
-    print(count_a, "  =====  ", count_b)
-
-    return 0
+    return onoff
 
 import random
 def main():
-    the_heap = Heap()
+
+    n = 5
+    onoff = [False for _ in range(n)]
 
     # build the graph
-    build_graph()
-    # put them in the heap
+    ranges = build_graph(n)
+    print(ranges)
+
+    # sort the graph
+    length_edges = []
+
+    for i in range(n):
+        length_edges.append([len(ranges[i]),i])
+
 
     wohoo = int(random.random()*n % n)
     print("random number: " , wohoo)
-    selection(wohoo)
-
-
+    result = selection(wohoo,onoff,ranges)
+    print(result)
 
 
 
