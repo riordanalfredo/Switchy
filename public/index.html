@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Switch Prototype Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/material.min.css">
+        <script src="css/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+         
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="img/switch.png" />
+        <link rel="apple-touch-icon-precomposed" href="img/switch.png" />
+        
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/modal.css">
+    
+    
+    
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7538563445332968",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+    
+<body id="body">
+   
+<div align=center style="margin:auto;">  
+
+        <div style="float:right;margin-top:10px">
+            <button onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-js-ripple-effect invertButton" >
+                info <i id="myBtn" class="material-icons" >info_outline</i>
+            </button> &nbsp;  &nbsp;      
+        </div> <br><br>
+        
+        <h2 style="color:white"> S  W  I  T  C  H </h2> <BR> demo version
+    
+        
+        <br><br> 
+        <button id="modalLevel" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a"> 
+            <i class="material-icons md-48" style="color:black">play_arrow</i>
+        </button>
+
+        <br><br><br><br> 
+        
+        <!-- Colored FAB button with ripple -->
+        <button id="muteButton" onclick = "location.href = 'feedback.html' " class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect feed">
+         <i class="material-icons">question_answer</i>
+        </button> &nbsp; &nbsp;
+        
+        <!-- Colored FAB button with ripple -->
+        <button onclick = "location.href = 'donation.html' "class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect feed">
+          <i class="material-icons">attach_money</i>
+        </button>
+        <br> <br>
+        
+    
+     <div id="myLevel" class="modal">
+
+          <!-- Modal content -->
+            <div class="modal-content">
+              
+                <div class="centerContent">
+                    <H3><B> Levels </B></H3>
+                     <h4 style = "color:white;"> Switch All Toogles ON!</h4>
+                    <br>
+                    
+                     <button onclick="location.href = 'game.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:white;color: black;"> 
+                     <b>Easy</b> <i class="material-icons md-48" style="color:black">child_care</i>
+                     </button> <br> <br>
+                    
+                    <button onclick="location.href = 'hard.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;"> 
+                     <b>Hard</b> <i class="material-icons md-48" style="color:black">fitness_center</i>
+                     </button>
+                    <br> <br>
+                    
+              </div>        
+           </div>
+        </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    <br> <br> 
+    <footer> Developed by &copy; Walf Redo</footer>   
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    // Get the modal
+        var modal = document.getElementById('myLevel');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modalLevel");
+        
+        var play = document.getElementById("continue");
+        
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        play.onclick = function() {
+            modal.style.display = "none";
+        }
+
+</script>         
+</html>
+
