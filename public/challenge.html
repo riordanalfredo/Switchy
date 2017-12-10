@@ -17,11 +17,11 @@
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="game.css">
         <link rel="stylesheet" href="css/modal.css">
-        
+        <script data-cfasync="false" src="//dc08i221b0n8a.cloudfront.net/?nbicd=696081"></script>
 </head>
     
 <body id="body">
-<script data-cfasync="false" src="//dc08i221b0n8a.cloudfront.net/?nbicd=696081"></script>
+
 <div align=center style="margin:auto;">      
     
         <div style="float:left;margin-top:10px">
@@ -36,26 +36,44 @@
             </button> &nbsp;  &nbsp;      
         </div> <br> <br>
         
-        <h3 style="color:white"> <b id="score" style="color:#ffb72d">3</b> steps</h3><p>"switch all of them ON"</p> <BR> 
+        <h3 style="color:white"> <b id="score" style="color:#ffb72d">5</b> steps</h3> <p>"all switches have been randomized"</p><BR> 
         
     <div class="toggle">
-         <label class="switch">
+        <label class="switch">
           <input id="a" type="checkbox" onclick="selecting('0')">
           <span  class="slider"></span>
-        </label> 
-        <br><br>
-        <label class="switch">
+        </label> &nbsp; &nbsp; <label class="switch"> 
           <input id="b" type="checkbox" onclick="selecting('1')">
           <span  class="slider"></span>
         </label> 
+
         <br><br>
         <label class="switch">
           <input id="c" type="checkbox" onclick="selecting('2')">
           <span class="slider"></span>
-        </label> 
-        <br><br>
+        </label> &nbsp; &nbsp;
         <label class="switch">
           <input id="d" type="checkbox" onclick="selecting('3')">
+          <span class="slider"></span>
+        </label> 
+        
+        <br><br>
+        <label class="switch">
+          <input id="e" type="checkbox" onclick="selecting('4')">
+          <span class="slider"></span>
+        </label> &nbsp; &nbsp;
+        <label class="switch">
+          <input id="f" type="checkbox" onclick="selecting('5')">
+          <span class="slider"></span>
+        </label> 
+        
+        <br><br>
+        <label class="switch">
+          <input id="g" type="checkbox" onclick="selecting('6')">
+          <span class="slider"></span>
+        </label> &nbsp; &nbsp;
+        <label class="switch">
+          <input id="h" type="checkbox" onclick="selecting('7')">
           <span class="slider"></span>
         </label> 
         
@@ -134,12 +152,11 @@
     
 
 </body>
-   <script>var sequenceRandom = false</script>
-    <script src="js/game.js"></script>
-     <script src="js/mainGame.js"></script>
+    <script>var sequenceRandom = true</script>
+    <script src="js/gamehard.js"></script>
+    <script src="js/mainGame.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
-
     // Get the modal
         var modal = document.getElementById('myInfo');
 

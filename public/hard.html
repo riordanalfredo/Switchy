@@ -2,7 +2,7 @@
 <html>
 
 <head>
-        <title>Switch Prototype Game</title>
+        <title>Switch Puzzle Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-indigo.min.css" />
@@ -21,7 +21,7 @@
 </head>
     
 <body id="body">
-   
+<script data-cfasync="false" src="//dc08i221b0n8a.cloudfront.net/?nbicd=696081"></script>
 <div align=center style="margin:auto;">      
     
         <div style="float:left;margin-top:10px">
@@ -36,7 +36,7 @@
             </button> &nbsp;  &nbsp;      
         </div> <br> <br>
         
-        <h3 style="color:white"> <b id="score" style="color:#ffb72d">7</b> steps</h3> <BR> 
+        <h3 style="color:white"> <b id="score" style="color:#ffb72d">5</b> steps</h3> <p>"switch all of them ON"</p><BR> 
         
     <div class="toggle">
          <label class="switch">
@@ -81,7 +81,7 @@
        
     
     <br><br>
-    <button onclick="location.href=''" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color:#ffb72d">R E S E T
+    <button onclick="resetting()" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color:#ffb72d">R E S E T
     </button> &nbsp;  &nbsp;  
     
     
@@ -152,8 +152,9 @@
     
 
 </body>
-    <script src="js/mainGame.js"></script>
+    <script>var sequenceRandom = false</script>
     <script src="js/gamehard.js"></script>
+    <script src="js/mainGame.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
 
