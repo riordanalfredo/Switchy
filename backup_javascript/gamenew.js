@@ -50,16 +50,21 @@ function theScoring(){
     var theScore = parseInt(document.getElementById("score").innerHTML);
     var scoreRank = document.getElementById("scoreRank");
     var scoreText = document.getElementById("scoreText");
-    if(theScore > badScore){
-        scoreRank.innerHTML = "<font style='color:indianred'>&diams; </font> &diams; &diams; ";
+    
+    if(theScore > outOfBoundScore){
+        scoreRank.innerHTML = "<img class='diamondOff' src='img/star.png'></img> <img class='diamondOff' src='img/star.png'></img> <img class='diamondOff' src='img/star.png'></img>";
+        scoreText.innerHTML = "POOR";
+    } 
+    else if(theScore > badScore){
+        scoreRank.innerHTML = "<img class='diamondOn' src='img/star.png'></img> <img class='diamondOff' src='img/star.png'></img> <img class='diamondOff' src='img/star.png'></img>";
         scoreText.innerHTML = "NOT BAD";
     }
-    else if(theScore > okayScore){
-        scoreRank.innerHTML = "<font style='color:indianred'>&diams; &diams; </font> &diams; ";
+    else if(theScore > optimalScore){
+        scoreRank.innerHTML = "<img class='diamondOn' src='img/star.png'></img> <img class='diamondOn' src='img/star.png'></img> <img class='diamondOff' src='img/star.png'></img>";
         scoreText.innerHTML = "COOL";
     }else
-    if (theScore >= optimalScore){
-        scoreRank.innerHTML = "<font style='color:indianred'>&diams; &diams; &diams; </font>";
+    if (theScore <= optimalScore){
+        scoreRank.innerHTML = "<img class='diamondOn' src='img/star.png'></img> <img class='diamondOn' src='img/star.png'></img> <img class='diamondOn' src='img/star.png'></img>";
         scoreText.innerHTML = "PERFECT";
     }
 
@@ -70,16 +75,18 @@ function theScoring(){
 
 function backButton(){
     if(document.getElementById("score").innerHTML != "0"){
-        switchAnimation(previousOnOff);
+        switchAnimation(previousOnOff[previousOnOff.length-1]);
         reduceStep();
         onoff = [];
+        var temp = previousOnOff[previousOnOff.length-1];
         for(var y = 0; y < previousOnOff.length; y++){
-            onoff.push(previousOnOff[y]);
+            onoff.push(temp[y]);
         }
+        previousOnOff.pop();
     }
     else{
         onoff = [];
-        for(var y = 0; y < previousOnOff.length; y++){
+        for(var y = 0; y < sequencePosition.length; y++){
             onoff.push(false);
         }
         switchAnimation(onoff);
@@ -137,10 +144,11 @@ function switchAnimation( status ){
 
 
 function savePrevious(){
-    previousOnOff = []
-    for(var i = 0; i < onoff.length; i++){
-        previousOnOff.push(onoff[i]);
+    var temp = []
+    for(var i = 0; i < sequencePosition.length; i++){
+        temp.push(onoff[i]);
     }
+    previousOnOff.push(temp);
 }
 
 

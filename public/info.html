@@ -7,13 +7,15 @@
         <link rel="stylesheet" href="css/material.min.css">
         <script src="css/material.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-         
+        <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="shortcut icon" sizes="196x196" href="img/switch.png" />
         <link rel="apple-touch-icon-precomposed" href="img/switch.png" />
         
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/modal.css">
         
 </head>
 
@@ -29,8 +31,9 @@
         </div> <br><br>
     
         <h2>Information</h2>
-        <p>Beta Version 1.0.2</p>
+        <p>Beta Version 1.0.3</p>
          <div style="margin:0% 15% 0% 15%; text-align:left">
+                  
         <h3>Welcome Testers!</h3>
         <p> Hi! Welcome to my second game. This game was created to implement my latest algorithm to solve
             dense graph problem. It is a simple PUZZLE Game where all switches able to affect others. Try to solve it by switching ON all of them.<br>
@@ -38,6 +41,12 @@
             
             <br>For further information about the theory, please don't hesitate to contact me
             through email : <a href="mailto:walf.redo.studio@gmail.com?Subject=Switchy%20Prototype" target="_top">walf.redo.studio@gmail.com </a> </p>
+             
+        <h3> What's New? </h3>
+        <p>(+) &nbsp; <b>Old Version</b>: Solve the puzzle in restricted number of steps<br>
+           (+) &nbsp; <b>New Version</b>: Solve the puzzle with the least steps<br> 
+           (+) &nbsp; Tutorial available for first visit and in menu <br>
+        </p> 
         <h3>Tips and Tricks</h3>
         <p> Some testers said <i>"The puzzle is too hard!" , "All looks random for me", "It is a trial and error game, I can solve it without thinking.", etc..</i>. Thus, here is some tips from me: <br><br>
             (-) &nbsp; Find the pattern. The pattern is from the most influence switch to the switch that not affect others.<br>
@@ -63,8 +72,6 @@
              <p> Do you want to make contribution? Yes you can! Here's is a money pool I created if you want to contribute in this project through PayPal. I am really grateful for my donators from previous version. There will be some rewards for my top donators. </p>
             <button  onclick="location.href='donation.html';" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " style="background-color:white; color:black; ">
             <b> DONATE NOW </b></button><br>
-          
-             
         <h3>Other Game</h3> 
     </div>
       <img src="img/kimply.png" width="100px"><br>
@@ -72,13 +79,74 @@
     <BR><BR>
     <button  onclick="window.history.go(-1);" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " style="background-color:white; color:black; width:120px">
     <b>CONTINUE</b></button><br>
+    <div id="myNews" class="modal">
+
+          <!-- Modal content -->
+            <div class="modal-content">
+              
+                <div class="centerContent">
+                    <H3><font style="font-family:'Bungee',cursive"> What's New? </font></H3>
+                    <div id="slideshow">
+                       <div class="division">
+                            <i class="material-icons">access_time</i> <br><br>
+                            <b class="subHeader">Old Version</b><br>
+                            <br>Solve the puzzle in restricted number of steps!
+                       </div>
+                       <div class="division"> 
+                            <i class="material-icons md-48" >fiber_new</i><br> <br>
+                           <b class="subHeader">New Version</b><br>
+                           <br>Solve the puzzle with the least steps!
+                       </div>
+                       <div class="division">
+                           <i class="material-icons">help</i> <br><br>
+                            <b class="subHeader">Tutorial</b><br>
+                            <br> It is available for first visit and in menu! <br>
+                       </div>
+                    </div><br>
+                     <button id="closeNews" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:white; color:black;">
+                     <b>CLOSE</b>
+                    </button> <br>
+              </div>        
+           </div>
+        </div>    
+        
+        
     </div>  
     
     
     
     <br> <br> 
+        
+    
     <footer> Developed by &copy; Walf Redo</footer>   
 </body>
+    <script src="js/modal.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+       var myNews = document.getElementById("myNews");
+           // Get the button that opens the modal
+        var btn = document.getElementById("closeNews");
+        
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function() {
+            myNews.style.display = "none";
+        }
+        
+        setTimeout(function(){
+            myNews.style.display = "block";
+        },3000)
+    //Slide Show!
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+
+    </script>
 </html>
 

@@ -5,7 +5,7 @@ var d = document.getElementById("d");
 var e = document.getElementById("e");
 var f = document.getElementById("f");
 
-var modifierOfTheSteps = 0; // reduce the optimal size
+var modifierOfTheSteps = 1; // reduce the optimal size
 
 var sequencePosition = [3,1,0,5,2,4]
 //Clear all

@@ -1,12 +1,21 @@
 .scoreRank{
-  font-size: 60px;  
+  font-size: 60px; 
+}
+
+.diamondOff{
+    opacity: 0.2;
+    width: 60px;
+}
+
+.diamondOn{
+    width: 60px;
 }
 
 .scoreText{
     margin-top: 30px;
     font-size: 24px;
     color:#ffb72d;
-    font-family: fantasy;
+    font-family: 'Racing Sans One', cursive;
 }
 
 
