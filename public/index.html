@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="css/material.min.css">
         <script src="css/material.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-         
+         <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="shortcut icon" sizes="196x196" href="img/switch.png" />
@@ -15,6 +16,8 @@
         
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/tutorial.css">
+        <link rel="stylesheet" href="game.css">
     
     
 <meta name="propeller" content="ca8ed5e78c23ee99ea62536db8b47ada" />
@@ -25,12 +28,13 @@
     enable_page_level_ads: true
   });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
     
 <body id="body">
-<!-- ads -->
+<!-- ads
 <script type="text/javascript" src="//go.oclasrv.com/apu.php?zoneid=1491604"></script>
 <script async="async" type="text/javascript" src="//go.mobisla.com/notice.php?p=1490961&interactive=1&pushup=1"></script>
 <script data-cfasync="false" src="//dc08i221b0n8a.cloudfront.net/?nbicd=696080"></script>
@@ -43,7 +47,7 @@
             </button> &nbsp;  &nbsp;      
         </div> <br><br><br>
         
-        <img src="img/main.png" width="180px"><BR>demo version
+        <img src="img/main.png" width="180px"><BR>demo version - V1.0.2
         
         
         <br><br> 
@@ -72,44 +76,79 @@
               
                 <div class="centerContent">
                     <H3><B> Levels </B></H3>
-                     <h4 style = "color:white;"> Switch All Toogles ON!</h4>
-                    <br>
-                    
+                     <h4 style = "color:white;" class="text"> Switch All Toogles ON!</h4>
+                
                      <button onclick="location.href = 'game.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:white;color: black;"> 
-                     <b>Easy</b>
+                     <b>Old Version</b>
                      </button> <br> <br>
                     
                     <button onclick="location.href = 'hard.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;"> 
-                     <b>Normal</b> 
+                     <b>New Version</b> 
                      </button> <br> <br>
                     
                      <button onclick="location.href = 'challenge.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;"> 
-                     <b>Challenging</b> 
+                     <b>Challenge</b> 
                      </button>
                     <BR><BR>
                     <p> NOTE: This is just a DEMO Version. We suggest the feedback is focus on the gameplay. Click below for more information.</p>
-                     <button onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;">
+                     <button onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:white; color:black;">
                         info <i id="myBtn" class="material-icons" >info_outline</i>
                     </button> <br><br>
               </div>        
            </div>
         </div>
-    
-    
-    
-    
+                
+        <div id="myTutorial" class="modal">
+
+          <!-- Modal content -->
+            <div class="modal-content">
+                <div class="centerContent">
+                    <H3><B> Tutorial </B></H3>
+                     Please complete the tutorial below. <br><br>
+                    <div>
+                        <font id="text" class="text">. . .</font> <br><br>
+                        <label class="switch">
+                          <input id="tut1" type="checkbox" onclick="selecting('0')" >
+                          <span  class="slider"></span>
+                        </label> <BR> <BR>
+                       <label class="switch">
+                          <input id="tut2" type="checkbox" onclick="selecting('1')" >
+                          <span  class="slider"></span>
+                        </label> <BR> <BR>
+                       <label class="switch">
+                          <input id="tut3" type="checkbox" onclick="selecting('2')" >
+                          <span  class="slider"></span>
+                        </label> 
+                        
+                   </div>
+                    
+                    
+                    
+                    <button id= "continueButton" onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " style="background-color:white; color:black; width:120px">
+                    <b>CONTINUE</b></button><br>
+                    
+                    <p>NOTE: This is just a DEMO Version. <br>Click <a id="closeTutorial" href="info.html">here</a> for more information.</p>
+                <font style="visibility:hidden;" id="score">2</font>
+              </div>        
+           </div>
+         </div>        
+        
     </div>
+         
+
     
     
     
     <br> <br> 
     <footer> Developed by &copy; Walf Redo</footer>   
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a2b544ac0df9a7b"></script>
-
+    <!-- Go to www.addthis.com/dashboard to customize your tools  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a2b544ac0df9a7b"></script>
+    <!-- -->
 </body>
-    
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>var sequenceRandom = false</script>
+     
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/tutorial.js"></script>
+    <script type="text/javascript" src="js/mainGame.js"></script>
     <script type="text/javascript">
 
     // Get the modal
@@ -124,7 +163,7 @@
         btn.onclick = function() {
             modal.style.display = "block";
         }
-
+        
 </script>         
 </html>
 
