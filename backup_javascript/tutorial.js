@@ -1,13 +1,10 @@
-var a = document.getElementById("a");
-var b = document.getElementById("b");
-var c = document.getElementById("c");
-var d = document.getElementById("d");
-var e = document.getElementById("e");
-var f = document.getElementById("f");
+var a = document.getElementById("tut1");
+var b = document.getElementById("tut2");
+var c = document.getElementById("tut3");
 
-var modifierOfTheSteps = 0; // reduce the optimal size
+var modifierOfTheSteps = 0;
 
-var sequencePosition = [3,1,0,5,2,4]
+var sequencePosition = [2,0,1]
 //Clear all
 var num =  document.getElementById("score");
 var scoreTemp = num.innerHTML;
@@ -18,16 +15,10 @@ function resetting(){
     a.checked = false;
     b.checked = false;
     c.checked = false;
-    d.checked = false;
-    e.checked = false;
-    f.checked = false;
    
     a.removeAttribute("checked");
     b.removeAttribute("checked");
     c.removeAttribute("checked");
-    d.removeAttribute("checked");
-    e.removeAttribute("checked");
-    f.removeAttribute("checked");
     
     onoff = [];
     for(var y = 0; y < sequencePosition.length; y++){
@@ -42,6 +33,10 @@ resetting();
 
 // check all switches condition
 function check(){
+    theText.innerHTML = ". . .";
+    setTimeout(function(){
+            theText.innerHTML = "' It affects the other buttons '"
+    },500)
     
     if(a.checked == false){
         return false;
@@ -53,16 +48,27 @@ function check(){
     if(c.checked == false){
         return false;
     }
-    if(d.checked == false){
-        return false;
-    }
-    if(e.checked == false){
-        return false;
-    }
-    if(f.checked == false){
-        return false;
-    }
+    
+    gotoNext();
     return true;
+}
+var theButton = document.getElementById("continueButton");
+theButton.style.visibility = "hidden"
+
+var STORAGE_KEY = "tutorialBool";
+function gotoNext(){
+    
+    theText.innerHTML = ". . .";
+    setTimeout(function(){
+        theText.innerHTML = "Congratulations! <br>You Solve the Puzzle!";
+    },500)
+   
+    theButton = document.getElementById("continueButton");
+    theButton.style.marginTop = "20px";
+    theButton.style.marginBottom= "20px";
+    theButton.style.visibility = "visible";
+    
+    localStorage.setItem(STORAGE_KEY, "0");
 }
 
 
@@ -79,18 +85,6 @@ function onTheButton(index){
         case 2:
           c.setAttribute("checked","checked");
             c.checked = true;
-            break;
-        case 3:
-            d.setAttribute("checked","checked");
-            d.checked = true;
-            break;
-        case 4:
-            e.setAttribute("checked","checked");
-            e.checked = true;
-            break;
-        case 5:
-            f.setAttribute("checked","checked");
-            f.checked = true;
             break;
     }
 }
@@ -114,21 +108,7 @@ function offTheButton(index){
                 c.checked = false;
              }
             break;
-        case 3:
-             if(d.checked){
-                d.checked = false;
-             }
-            break;
-        case 4:
-             if(e.checked){
-                e.checked = false;
-             }
-            break;
-        case 5:
-             if(f.checked){
-                f.checked = false;
-             }
-            break;
+
     }
     
 }

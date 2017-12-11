@@ -5,14 +5,18 @@ Button Functionalities
 */
 
 var sequenceRandom = false // to remove the randomness 
-var num =  document.getElementById("score");
-var temp = parseInt(num.innerHTML)
+var num =  sequencePosition.length;
+var temp = num - 1;
 var n = temp + 1 + modifierOfTheSteps;
 var graph = build_graph();
 var onoff = [];
 for(var y = 0; y < n; y++){
     onoff.push(false);
 }
+var optimalScore = num - 2;
+var okayScore = num ;
+var badScore = num + 2;
+var outOfBoundScore = (num-1)*3 -1;
 
 var gameCond = true;
 
@@ -21,8 +25,8 @@ function gameCondition(score){
    
     var allSet = check();
     var words = "";
-    if(score == 1 && !allSet){ //When score is 1
-        words = "* You Lose *";
+    if(score == outOfBoundScore && !allSet){ //When score is 1
+        words = "* TOO FAR *";
         printEnd(words)
     }
     else if(allSet){
@@ -34,38 +38,88 @@ function gameCondition(score){
 function printEnd(words){
     var title = document.getElementById("titleModal");
     title.innerHTML = words;
+    theScoring();
     var modalGame = document.getElementById('myEnd');
     window.setTimeout(function(){
         showModal();
     },700);
 }
 
+//New added
+function theScoring(){
+    var theScore = parseInt(document.getElementById("score").innerHTML);
+    var scoreRank = document.getElementById("scoreRank");
+    var scoreText = document.getElementById("scoreText");
+    if(theScore > badScore){
+        scoreRank.innerHTML = "<font style='color:indianred'>&diams; </font> &diams; &diams; ";
+        scoreText.innerHTML = "NOT BAD";
+    }
+    else if(theScore > okayScore){
+        scoreRank.innerHTML = "<font style='color:indianred'>&diams; &diams; </font> &diams; ";
+        scoreText.innerHTML = "COOL";
+    }else
+    if (theScore >= optimalScore){
+        scoreRank.innerHTML = "<font style='color:indianred'>&diams; &diams; &diams; </font>";
+        scoreText.innerHTML = "PERFECT";
+    }
+
+    var scoreStated = document.getElementById("scoreStated");
+    scoreStated.innerHTML = theScore;
+}
+
+
+function backButton(){
+    if(document.getElementById("score").innerHTML != "0"){
+        switchAnimation(previousOnOff);
+        reduceStep();
+        onoff = [];
+        for(var y = 0; y < previousOnOff.length; y++){
+            onoff.push(previousOnOff[y]);
+        }
+    }
+    else{
+        onoff = [];
+        for(var y = 0; y < previousOnOff.length; y++){
+            onoff.push(false);
+        }
+        switchAnimation(onoff);
+    }
+}
+
+//Until here
+
+
 function showModal(){
     var modalGame = document.getElementById('myEnd');
     modalGame.style.display = "block"
 }
 
-//Reducing the step of the score
+//Increasing the step of the score
+function increaseStep(){
+    var getSteps = document.getElementById("score")
+    var step = parseInt(getSteps.innerHTML);
+    var finalStep =  step + 1;
+    getSteps.innerHTML = finalStep;
+    return step;
+}
+
 function reduceStep(){
     var getSteps = document.getElementById("score")
     var step = parseInt(getSteps.innerHTML);
-    
-    if(step > 0){
-        var finalStep =  step - 1;
-        getSteps.innerHTML = finalStep;
-    }
+    var finalStep =  step - 1;
+    getSteps.innerHTML = finalStep;
     return step;
 }
 
 
-
+var previousOnOff = new Array();
 function selecting(index){
     var indexInt = parseInt(index);
+    savePrevious();
     var onoffStatus = selectionAlgorithm(indexInt,onoff,graph);
     switchAnimation(onoffStatus);
-    
     // Reducing step and call game condition wether lose or win
-    var score = reduceStep();
+    var score = increaseStep();
     gameCondition(score);
 }
 
@@ -82,9 +136,16 @@ function switchAnimation( status ){
 }
 
 
+function savePrevious(){
+    previousOnOff = []
+    for(var i = 0; i < onoff.length; i++){
+        previousOnOff.push(onoff[i]);
+    }
+}
+
+
 function selectionAlgorithm(i, onoff, ranges){
     onoff[i] = !onoff[i];
-    
     for(var j = 0; j < ranges[i].length; j++){
         var loop = ((ranges[i].length) + 1) - ranges[ranges[i][j]].length;
         for(var k = 0; k < loop+1; k++){
@@ -151,7 +212,6 @@ function build_graph(){
         }
         integerFinal.push(temp);
     }
-    
     return integerFinal;
     
 }
