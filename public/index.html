@@ -73,20 +73,21 @@
 
           <!-- Modal content -->
             <div class="modal-content">
-              
+              <span class="close level">&times;</span>
                 <div class="centerContent">
-                    <H3><B> Levels </B></H3>
+                    <H3><B> LEVELS </B></H3>
                      <h4 style = "color:white;" class="text"> Switch All Toogles ON!</h4>
                     
                      <button onclick="location.href = 'game/tutorial.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;"> 
                      <b>Tutorial</b> 
                       </button><br> <br>
-                     <button onclick="location.href = 'game.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:white;color: black;"> 
-                     <b>Old Version</b>
-                     </button> <br> <br>
                     
                     <button onclick="location.href = 'hard.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;"> 
-                     <b>New Version</b> 
+                     <i class="material-icons" >new_releases</i> <b>New Mode</b> 
+                     </button> <br> <br>
+                    
+                     <button onclick="location.href = 'game.html'" height="200px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:white;color: black;"> 
+                     <b>Old Mode</b>
                      </button> <br> <br>
                     
 
@@ -99,11 +100,14 @@
         </div>
                 
         <div id="myTutorial" class="modal">
-
+                 
           <!-- Modal content -->
             <div class="modal-content">
+               <span class="close tutorial">&times;</span>
                 <div class="centerContent">
-                    <H3><B> Tutorial </B></H3>
+                    
+
+                    <H3><B> TUTORIAL </B></H3>
                      Please complete the tutorial below. <br><br>
                     <div>
                         <font id="text" class="text">. . .</font> <br><br>
@@ -121,11 +125,9 @@
                         </label> 
                         
                    </div>
-                    
-                    
-                    
+                               
                     <button id= "continueButton" onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " style="background-color:white; color:black; width:120px">
-                    <b>CONTINUE</b></button><br>
+                    <b>CONTINUE</b></button><br><br>
                     
                     <p>NOTE: This is just a DEMO Version. <br>Click <a id="closeTutorial" href="info.html">here</a> for more information.</p>
                 <font style="visibility:hidden;" id="score">2</font>
@@ -141,7 +143,7 @@
     
     <br> <br> 
     <footer> Developed by &copy; Walf Redo</footer>   
-    <!-- Go to www.addthis.com/dashboard to customize your tools  <script type="text/javascript" --> src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a2b544ac0df9a7b"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->  <script type="text/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a2b544ac0df9a7b"></script>
     <!-- -->
 </body>
     <script>var sequenceRandom = false</script>
@@ -157,11 +159,15 @@
         // Get the button that opens the modal
         var btn = document.getElementById("modalLevel");
         
-        var play = document.getElementById("continue");
+        var closeLevel = document.getElementsByClassName("level")[0];
         
         // When the user clicks on the button, open the modal 
         btn.onclick = function() {
             modal.style.display = "block";
+        }
+        
+        closeLevel.onclick = function(){
+            modal.style.display = "none";
         }
         
 </script>         

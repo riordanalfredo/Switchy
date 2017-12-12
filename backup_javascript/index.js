@@ -4,12 +4,12 @@
 // Get the modal
 var tutorialModal = document.getElementById('myTutorial');
 
-// Get the button that opens the modal
-var closeTutorial = document.getElementById("closeTutorial");
+// Get the <span> element that closes the modal
+var closeTutorial = document.getElementsByClassName("tutorial")[0];
 
 // When the user clicks on the button, open the modal 
 closeTutorial.onclick = function() {
-    tutorialModal.style.display = "block";
+    tutorialModal.style.display = "none";
 }
 
 
