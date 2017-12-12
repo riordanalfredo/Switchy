@@ -1,5 +1,15 @@
+html {
+
+  min-height:100%;
+   position:relative;
+}
 footer{
+    position: absolute;
     text-align: center;
+    align-content: center;
+    bottom:0;
+    width:100%;
+   height:120px;   /* Height of the footer */
 }
 
 .news{
@@ -69,6 +79,7 @@ footer{
 body{
     background-color: #25293c;
     color: white;
+    
 }
 
 .feed{
