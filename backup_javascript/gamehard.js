@@ -1,9 +1,9 @@
-var a = document.getElementById("a");
-var b = document.getElementById("b");
-var c = document.getElementById("c");
-var d = document.getElementById("d");
-var e = document.getElementById("e");
-var f = document.getElementById("f");
+var pos1 = document.getElementById("a");
+var pos2 = document.getElementById("b");
+var pos3 = document.getElementById("c");
+var pos4 = document.getElementById("d");
+var pos5 = document.getElementById("e");
+var pos6 = document.getElementById("f");
 
 var modifierOfTheSteps = 0;
 
@@ -16,19 +16,19 @@ var scoreTemp = num.innerHTML;
 var onoff = [];
 
 function resetting(){
-    a.checked = false;
-    b.checked = false;
-    c.checked = false;
-    d.checked = false;
-    e.checked = false;
-    f.checked = false;
+    pos1.checked = false;
+    pos2.checked = false;
+    pos3.checked = false;
+    pos4.checked = false;
+    pos5.checked = false;
+    pos6.checked = false;
     
-    a.removeAttribute("checked");
-    b.removeAttribute("checked");
-    c.removeAttribute("checked");
-    d.removeAttribute("checked");
-    e.removeAttribute("checked");
-    f.removeAttribute("checked");
+    pos1.removeAttribute("checked");
+    pos2.removeAttribute("checked");
+    pos3.removeAttribute("checked");
+    pos4.removeAttribute("checked");
+    pos5.removeAttribute("checked");
+    pos6.removeAttribute("checked");
     
     onoff = [];
     for(var y = 0; y < sequencePosition.length; y++){
@@ -40,31 +40,28 @@ function resetting(){
 }
 resetting();
 
-
 // check all switches condition
 function check(){
     
-    if(a.checked == false){
+    if(pos1.checked == false){
         return false;
     }
     
-    if(b.checked == false){
+    if(pos2.checked == false){
         return false;
     }
-    if(c.checked == false){
+    if(pos3.checked == false){
         return false;
     }
-    if(d.checked == false){
+    if(pos4.checked == false){
         return false;
     }
-    if(e.checked == false){
+    if(pos5.checked == false){
         return false;
     }
-    if(f.checked == false){
+    if(pos6.checked == false){
         return false;
     }
-
-    
     return true;
 }
 
@@ -72,30 +69,29 @@ function check(){
 function onTheButton(index){
     switch(index){
         case 0:
-            a.setAttribute("checked","checked");
-            a.checked = true; 
+            pos1.setAttribute("checked","checked");
+            pos1.checked = true; 
             break;
         case 1:
-            b.setAttribute("checked","checked");
-            b.checked = true;
+            pos2.setAttribute("checked","checked");
+            pos2.checked = true;
             break;
         case 2:
-            c.setAttribute("checked","checked");
-            c.checked = true;
+            pos3.setAttribute("checked","checked");
+            pos3.checked = true;
             break;
         case 3:
-            d.setAttribute("checked","checked");
-            d.checked = true;
+            pos4.setAttribute("checked","checked");
+            pos4.checked = true;
             break;
         case 4:
-            e.setAttribute("checked","checked");
-            e.checked = true;
+            pos5.setAttribute("checked","checked");
+            pos5.checked = true;
             break;
         case 5:
-            f.setAttribute("checked","checked");
-            f.checked = true;
+            pos6.setAttribute("checked","checked");
+            pos6.checked = true;
             break;
-
     }
 }
 
@@ -104,44 +100,35 @@ function onTheButton(index){
 function offTheButton(index){
     switch(index){
         case 0:
-             if(a.checked){
-                a.checked = false;
+             if(pos1.checked){
+                pos1.checked = false;
              }
             break;
         case 1:
-             if(b.checked){
-                b.checked = false;
+             if(pos2.checked){
+                pos2.checked = false;
              }   
             break;
         case 2:
-             if(c.checked){
-                c.checked = false;
+             if(pos3.checked){
+                pos3.checked = false;
              }
             break;
         case 3:
-             if(d.checked){
-                d.checked = false;
+             if(pos4.checked){
+                pos4.checked = false;
              }
             break;
         case 4:
-             if(e.checked){
-                e.checked = false;
+             if(pos5.checked){
+                pos5.checked = false;
              }
             break;
         case 5:
-             if(f.checked){
-                f.checked = false;
+             if(pos6.checked){
+                pos6.checked = false;
              }
             break;
     }
+    
 }
-
-
-
-
-
-
-
-
-
-

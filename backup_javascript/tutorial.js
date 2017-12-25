@@ -1,6 +1,6 @@
-var a = document.getElementById("tut1");
-var b = document.getElementById("tut2");
-var c = document.getElementById("tut3");
+var pos1 = document.getElementById("tut1");
+var pos2 = document.getElementById("tut2");
+var pos3 = document.getElementById("tut3");
 
 var modifierOfTheSteps = 0;
 
@@ -12,13 +12,13 @@ var onoff = [];
 
 function resetting(){
     
-    a.checked = false;
-    b.checked = false;
-    c.checked = false;
+    pos1.checked = false;
+    pos2.checked = false;
+    pos3.checked = false;
    
-    a.removeAttribute("checked");
-    b.removeAttribute("checked");
-    c.removeAttribute("checked");
+    pos1.removeAttribute("checked");
+    pos2.removeAttribute("checked");
+    pos3.removeAttribute("checked");
     
     onoff = [];
     for(var y = 0; y < sequencePosition.length; y++){
@@ -38,14 +38,14 @@ function check(){
             theText.innerHTML = "' It affects the other buttons '"
     },500)
     
-    if(a.checked == false){
+    if(pos1.checked == false){
         return false;
     }
     
-    if(b.checked == false){
+    if(pos2.checked == false){
         return false;
     }
-    if(c.checked == false){
+    if(pos3.checked == false){
         return false;
     }
     
@@ -75,16 +75,16 @@ function gotoNext(){
 function onTheButton(index){
     switch(index){
         case 0:
-            a.setAttribute("checked","checked");
-            a.checked = true; 
+            pos1.setAttribute("checked","checked");
+            pos1.checked = true; 
             break;
         case 1:
-           b.setAttribute("checked","checked");
-            b.checked = true;
+            pos2.setAttribute("checked","checked");
+            pos2.checked = true;
             break;
         case 2:
-          c.setAttribute("checked","checked");
-            c.checked = true;
+            pos3.setAttribute("checked","checked");
+            pos3.checked = true;
             break;
     }
 }
@@ -94,18 +94,18 @@ function onTheButton(index){
 function offTheButton(index){
     switch(index){
         case 0:
-             if(a.checked){
-                a.checked = false;
+             if(pos1.checked){
+                pos1.checked = false;
              }
             break;
         case 1:
-             if(b.checked){
-                b.checked = false;
+             if(pos2.checked){
+                pos2.checked = false;
              }   
             break;
         case 2:
-             if(c.checked){
-                c.checked = false;
+             if(pos3.checked){
+                pos3.checked = false;
              }
             break;
 
