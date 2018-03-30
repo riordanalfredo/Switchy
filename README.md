@@ -8,7 +8,7 @@ To start with, the project can be accessed via website [here](switch-pttp.fireba
 * Fork this project in Github
 
 ## Game Design
-Please refer to [GameDesign.md]() documentation here. It contains storyboard, leveling decision, and security matters.
+Please refer to this [Wiki](https://github.com/riordanalfredo/Switchy/wiki) documentation here. It contains Class diagrams, Storyboards, Leveling decision, and Risk Assessment.
 
 ## Deployment
 Hosted by : [Firebase](https://firebase.google.com/)
@@ -16,11 +16,10 @@ The deployment were done by hosting it via command prompt as shown as guide in F
 
 ## Built With
 * [Brackets IDE](http://brackets.io/)
-* CSS tempalate by [Material Design Lite](https://getmdl.io)
-* 
+* CSS template by [Material Design Lite](https://getmdl.io)
 
 ## Versioning
-Current version is V1.0.3; Version planning will be briefly discussed in [version.md]()
+Current version is V1.0.3; Version planning will be briefly discussed in this [Wiki](https://github.com/riordanalfredo/Switchy/wiki)
 
 ## Authors
 By Riordan Dervin Alfredo - Full stack developer - WalfRedoStudio
