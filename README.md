@@ -17,6 +17,7 @@ The deployment were done by hosting it via command prompt as shown as guide in F
 ## Built With
 * [Brackets IDE](http://brackets.io/)
 * CSS template by [Material Design Lite](https://getmdl.io)
+* Encoding and Decoding by [SJCL](https://github.com/bitwiseshiftleft/sjcl)
 
 ## Versioning
 Current version is V1.0.3; Version planning will be briefly discussed in this [Wiki](https://github.com/riordanalfredo/Switchy/wiki)
