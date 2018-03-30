@@ -1,1 +1,31 @@
-R022.r6=function (){return typeof R022.M6.q==='function'?R022.M6.q.apply(R022.M6,arguments):R022.M6.q;};R022.F6=function (){return typeof R022.M6.q==='function'?R022.M6.q.apply(R022.M6,arguments):R022.M6.q;};R022.M6=function(s,Y){var L=2;while(L!==10){switch(L){case 2:var F,N,X,V;L=1;break;case 14:Y=Y.map(function(Q){var E=2;while(E!==13){switch(E){case 4:var H=0;E=3;break;case 1:E=!V--?5:4;break;case 2:var R;E=1;break;case 8:H++;E=3;break;case 3:E=H<Q.length?9:7;break;case 5:R='';E=4;break;case 7:E=!R?6:14;break;case 6:return;E=13;break;case 9:R+=F[X][w](Q[H]+118);E=8;break;case 14:return R;E=13;break;}}});L=13;break;case 13:L=!V--?12:11;break;case 4:L=!V--?3:9;break;case 9:var w='fromCharCode',r='RegExp';L=8;break;case 7:X=N.replace(new F[r]("^['-|]"),'S');L=6;break;case 11:return{q:function(K,k){var Z=2;while(Z!==20){switch(Z){case 5:var e,z=0;Z=4;break;case 2:Z=!V--?1:5;break;case 3:Z=z<K[Y[5]]?9:12;break;case 13:e=e^p;Z=14;break;case 4:var I=J;Z=3;break;case 10:return e?I:!I;Z=20;break;case 1:k=F[Y[4]];Z=5;break;case 6:e=p;Z=14;break;case 12:Z=!I?11:10;break;case 9:var f=k(K[Y[2]](z),16)[Y[3]](2);var p=f[Y[2]](f[Y[5]]-1);Z=7;break;case 14:z++;Z=3;break;case 11:undefined;Z=10;break;case 7:Z=z===0?6:13;break;}}}};L=10;break;case 1:L=!V--?5:4;break;case 6:L=!V--?14:13;break;case 3:N=typeof s;L=9;break;case 5:F=Y.filter.constructor(s)();L=4;break;case 8:L=!V--?7:6;break;case 12:J=J(new F[Y[0]]()[Y[1]]());L=11;break;}}function J(C){var u=2;while(u!==15){switch(u){case 10:u=B>=0&&o>=0?20:18;break;case 16:T=o-C>v;u=19;break;case 5:P=F[Y[4]];u=4;break;case 18:u=B>=0?17:16;break;case 17:T=C-B>v;u=19;break;case 8:x=Y[6];u=7;break;case 12:u=!V--?11:10;break;case 9:u=!V--?8:7;break;case 6:o=x&&P(x,v);u=14;break;case 14:u=!V--?13:12;break;case 1:u=!V--?5:4;break;case 13:d=Y[7];u=12;break;case 20:T=C-B>v&&o-C>v;u=19;break;case 11:B=d&&P(d,v);u=10;break;case 7:u=!V--?6:14;break;case 4:u=!V--?3:9;break;case 19:return T;u=15;break;case 3:v=30;u=9;break;case 2:var T,v,x,o,d,B,P;u=1;break;}}}}('return this',[[-50,-21,-2,-17],[-15,-17,-2,-34,-13,-9,-17],[-19,-14,-21,-4,-53,-2],[-2,-7,-35,-2,-4,-13,-8,-15],[-6,-21,-4,-3,-17,-45,-8,-2],[-10,-17,-8,-15,-2,-14],[-68,-61,-63,-62,-64,-11,-70,-70,-70],[]]);function R022(){}R022.A6=function(o6){if(R022)return R022.F6(o6);};R022.H6=function(B6){if(R022)return R022.F6(B6);};R022.x6=function(m6){if(R022)return R022.F6(m6);};R022.U6=function(T6){if(R022&&T6)return R022.F6(T6);};R022.c6=function(e6){if(R022)return R022.r6(e6);};R022.R6=function(g6){if(R022&&g6)return R022.r6(g6);};var modal=document.getElementById(R022.R6("9467")?"":'myModal');var btn=document.getElementById(R022.c6("e671")?"":"myBtn");var span=document.getElementsByClassName(R022.U6("2de6")?"close":"")[R022.x6("d2c1")?8:0];btn.onclick=function(){modal.style.display=R022.H6("ea82")?"":"block";};span.onclick=function(){modal.style.display=R022.A6("2c92")?"none":"";};function oke(){R022.a6=function(j6){if(R022&&j6)return R022.F6(j6);};modal.style.display=R022.a6("c8f3")?"":"none";}window.onclick=function(X6){if(X6.target==modal){modal.style.display="none";}};
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+function oke(){
+    modal.style.display = "none";
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
