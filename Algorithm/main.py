@@ -57,9 +57,6 @@ def build_graph1(n):
     return ranges
 
 
-
-
-
 def selection(i,onoff,ranges):
 
     onoff[i] = not onoff[i]  #change itself
