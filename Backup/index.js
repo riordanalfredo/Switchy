@@ -1,49 +1,40 @@
 //Tutorial Modal
 
-
 // Get the modal
-var tutorialModal = document.getElementById('myTutorial');
+var tutorialModal = document.getElementById("myTutorial");
 
 // Get the <span> element that closes the modal
 var closeTutorial = document.getElementsByClassName("tutorial")[0];
 
-// When the user clicks on the button, open the modal 
-closeTutorial.onclick = function() {
-    tutorialModal.style.display = "none";
-}
-
+// When the user clicks on the button, open the modal
+closeTutorial.onclick = function () {
+  tutorialModal.style.display = "none";
+};
 
 var STORAGE_KEY = "tutorialBool";
 //Get local storage
 var tutorialStorage = localStorage.getItem(STORAGE_KEY);
 //Timeout
 
-
- if (!tutorialStorage){
-        localStorage.setItem(STORAGE_KEY, "1");
-    
+if (!tutorialStorage) {
+  localStorage.setItem(STORAGE_KEY, "1");
 }
 
-        var currentStorage = localStorage.getItem(STORAGE_KEY);
-        if(currentStorage == "1"){
-        //Show modal
-        setTimeout(function(){
-            tutorialModal.style.display = "block";
-        },2000);
-    }
+var currentStorage = localStorage.getItem(STORAGE_KEY);
+if (currentStorage == "1") {
+  //Show modal
+  setTimeout(function () {
+    tutorialModal.style.display = "block";
+  }, 2000);
+}
 
- //tutorialModal.style.display = "block";
+//tutorialModal.style.display = "block";
 
 //Tutorial
 var theText = document.getElementById("text");
-setTimeout(function() { 
+setTimeout(function () {
   theText.innerHTML = "' Click one of the switch! '";
-},  1000);
-
-
-
-
-
+}, 1000);
 
 /*
 //HTML
@@ -77,7 +68,7 @@ setTimeout(function() {
            &#x25cf; &#x25cf; <font color="#ffa800">&#x25cf;</font><br>
          <br> <br>
            Pretty cool eh? You can continue by pressing the button below.<br><br>
-            <button onclick="location.href='info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;">
+            <button onclick="location.href='pages/info.html'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" style="background-color:#ffcc6a; color:black;">
             continue <i id="closeTutorial" class="material-icons" >play_arrow</i>
             </button> <br><br>
 
